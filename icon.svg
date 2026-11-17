@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" stroke="#173A7A" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
-  <defs><pattern id="d" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#C99A2A" stroke="none" opacity=".55"/></pattern></defs>
-  <rect width="512" height="512" fill="#E9B93E" stroke="none"/><rect width="512" height="512" fill="url(#d)" stroke="none"/>
+  <defs><pattern id="d" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#2A8C80" stroke="none" opacity=".55"/></pattern></defs>
+  <rect width="512" height="512" fill="#45BCAE" stroke="none"/><rect width="512" height="512" fill="url(#d)" stroke="none"/>
   <circle cx="290" cy="270" r="150" fill="#FFFCF3"/>
   <path d="M60 330q110-46 220 0z" fill="#8CC3F0" stroke="none" opacity=".0"/>
   <path d="M206 420q-14-120 30-236" fill="none" stroke="#173A7A" stroke-width="30"/>

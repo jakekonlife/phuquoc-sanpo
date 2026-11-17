@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="晃晃签">
-<meta name="theme-color" content="#E9B93E">
+<meta name="theme-color" content="#45BCAE">
 <title>富国岛晃晃签</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 <style>
 :root{
-  --mustard:#E9B93E; --navy:#173A7A; --blue:#2F6FD0; --sky:#8CC3F0; --ice:#EAF4FC;
+  --mustard:#E9B93E; --theme:#45BCAE; --navy:#173A7A; --blue:#2F6FD0; --sky:#8CC3F0; --ice:#EAF4FC;
   --coral:#E9574D; --pink:#F6B9B2; --cream:#FFFCF3; --white:#fff;
   --line:2px solid var(--navy);
   --display:'ZCOOL KuaiLe','Fredoka','PingFang SC',sans-serif;
@@ -23,9 +23,9 @@
   --body:'Noto Sans SC','PingFang SC','Hiragino Sans',sans-serif;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{background:var(--mustard)}
+html{background:var(--theme)}
 body{margin:0;font-family:var(--body);color:var(--navy);font-size:15px;line-height:1.6;
-  background:var(--mustard) radial-gradient(rgba(23,58,122,.13) 1.2px,transparent 1.4px) 0 0/14px 14px;min-height:100vh}
+  background:var(--theme) radial-gradient(rgba(23,58,122,.13) 1.2px,transparent 1.4px) 0 0/14px 14px;min-height:100vh}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
 a{color:inherit}
 .app{max-width:480px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top)) 16px calc(96px + env(safe-area-inset-bottom))}
@@ -208,7 +208,7 @@ h4.mine{font-family:var(--display);font-weight:400;font-size:18px;margin:18px 0 
 .slot.got.pic>img{width:100%;height:100%;object-fit:cover;display:block}
 .slot.got.pic .stamp{position:absolute;right:-4%;bottom:-4%;width:58%;mix-blend-mode:normal;background:rgba(255,252,243,.9);border-radius:50%}
 .slot.got.pic em{position:absolute;left:5px;top:5px;background:var(--navy);color:#fff;font-style:normal;font-size:11px;font-weight:700;border-radius:999px;padding:0 7px}
-.recap-prev{background:var(--mustard);border:var(--line);border-radius:16px;padding:12px;margin:46px 0 4px;text-align:center;min-height:200px;display:grid;place-items:center}
+.recap-prev{background:var(--theme);border:var(--line);border-radius:16px;padding:12px;margin:46px 0 4px;text-align:center;min-height:200px;display:grid;place-items:center}
 .recap-prev img{max-width:100%;max-height:62vh;display:block;margin:0 auto;box-shadow:4px 4px 0 var(--navy);-webkit-touch-callout:default}
 input.line{width:100%;font:inherit;color:inherit;border:var(--line);border-radius:999px;padding:9px 16px;background:var(--white)}
 
@@ -808,7 +808,7 @@ function paintRecap(){
   }).catch(function(){var m=$('#recapMsg'); if(m) m.textContent='没画出来，再点一次「换个排法」试试。'});
 }
 function drawRecap(fmt,items,got,line,seed){
-  var NAVY='#173A7A',MUST='#E9B93E',BLUE='#2F6FD0',SKY='#8CC3F0',CORAL='#E9574D',CREAM='#FFFCF3';
+  var NAVY='#173A7A',MUST='#E9B93E',BLUE='#2F6FD0',SKY='#8CC3F0',CORAL='#E9574D',CREAM='#FFFCF3',THEME='#45BCAE';
   var story=fmt==='story', Wd=1080, Hd=story?1920:1350, c=document.createElement('canvas'); c.width=Wd; c.height=Hd;
   var x=c.getContext('2d'), R=rng(seed*7919+items.length), DISP='"ZCOOL KuaiLe","PingFang SC",sans-serif', LAT='Fredoka,"ZCOOL KuaiLe",sans-serif', BODY='"Noto Sans SC","PingFang SC",sans-serif';
   function spaced(t,cx,y,gap){var ws=[].map.call(t,function(ch){return x.measureText(ch).width}), tot=ws.reduce(function(a,b){return a+b},0)+gap*(t.length-1), px=cx-tot/2; x.textAlign='left'; [].forEach.call(t,function(ch,i){x.fillText(ch,px,y); px+=ws[i]+gap}); x.textAlign='center'}
@@ -832,7 +832,7 @@ function drawRecap(fmt,items,got,line,seed){
     x.restore();
   }
   // 底色与圆点
-  x.fillStyle=MUST; x.fillRect(0,0,Wd,Hd); x.fillStyle='rgba(23,58,122,.13)';
+  x.fillStyle=THEME; x.fillRect(0,0,Wd,Hd); x.fillStyle='rgba(23,58,122,.13)';
   for(var dy=14;dy<Hd;dy+=28) for(var dx=14;dx<Wd;dx+=28){x.beginPath(); x.arc(dx,dy,2.6,0,7); x.fill()}
   // 海报纸
   var px=44, py=story?150:44, pw=Wd-88, ph=Hd-py*2;
